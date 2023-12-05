@@ -74,3 +74,8 @@ then sum($)
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday1%2Fpart2"><img width="300" src="/images/dwplayground-button.png"><a>
 
+---
+
+## Other repos
+
+- Ryan Hoegg's [adventofcode2023](https://github.com/rhoegg/adventofcode2023)
