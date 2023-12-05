@@ -4,7 +4,7 @@ DataWeave scripts used in the [adventofcode.com](https://adventofcode.com/) site
 
 ## Day 1
 
-Live stream: [mulesoft_community | It's that time of the year again 🌲 Let's play Advent of Code 2023 with DataWeave ✨](https://www.twitch.tv/videos/1995939015)
+Live stream @ twitch.tv/mulesoft_community: [It's that time of the year again 🌲 Let's play Advent of Code 2023 with DataWeave ✨](https://www.twitch.tv/videos/1995939015)
 
 ### Part 1
 
