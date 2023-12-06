@@ -77,3 +77,4 @@ then sum($)
 ## Other repos
 
 - Ryan Hoegg's [adventofcode2023](https://github.com/rhoegg/adventofcode2023)
+- Ignacio Esteban Losiggio's [aoc2023](https://github.com/iglosiggio/aoc2023)
