@@ -72,6 +72,52 @@ then sum($)
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday1%2Fpart2"><img width="300" src="/images/dwplayground-button.png"><a>
 
+## Day 2
+
+Live stream @ twitch.tv/mulesoft_community: [First stream of the year!! ~ Advent of Code 2023 Day 2](https://www.twitch.tv/videos/2027472277)
+
+### Part 1
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+import every from dw::core::Arrays
+import lines from dw::core::Strings
+output application/json
+var maxRed = 12
+var maxGreen = 13
+var maxBlue = 14
+---
+lines(payload) map ((game, gameidx) -> do {
+    var sets = game[8 to -1] splitBy ";" map (
+        trim($) splitBy "," reduce ((item, acc={}) -> 
+            acc ++ {
+                ((item scan /red|green|blue/)[0][0]): (item scan /\d+/)[0][0] as Number
+            }
+        )
+    )
+    ---
+    {
+        game: gameidx+1,
+        sets: sets,
+        isPossible: (sets reduce (set, acc=[]) -> (
+            acc 
+            + ((set.red default 0) <= maxRed)
+            + ((set.green default 0) <= maxGreen)
+            + ((set.blue default 0) <= maxBlue)
+        )) every $
+    }
+}) 
+filter $.isPossible
+then $.game
+then sum($)
+```
+</details>
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday2%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
+
 ---
 
 ## Other repos
