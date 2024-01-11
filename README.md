@@ -74,9 +74,9 @@ then sum($)
 
 ## Day 2
 
-Live stream @ twitch.tv/mulesoft_community: [First stream of the year!! ~ Advent of Code 2023 Day 2](https://www.twitch.tv/videos/2027472277)
-
 ### Part 1
+
+Live stream @ twitch.tv/mulesoft_community: [First stream of the year!! ~ Advent of Code 2023 Day 2](https://www.twitch.tv/videos/2027472277)
 
 <details>
   <summary>Script</summary>
@@ -117,6 +117,46 @@ then sum($)
 </details>
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday2%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
+
+### Part 2
+
+Live stream @ twitch.tv/mulesoft_community: [Playing Advent of Code with DataWeave once more! (Programming challenges)](https://www.twitch.tv/videos/2029366733)
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+import lines from dw::core::Strings
+output application/json
+---
+lines(payload) map ((game, gameidx) -> do {
+    var sets = game[8 to -1] splitBy ";" map (
+        trim($) splitBy "," reduce ((item, acc={}) -> 
+            acc ++ {
+                ((item scan /red|green|blue/)[0][0]): (item scan /\d+/)[0][0] as Number
+            }
+        )
+    )
+    fun getMaxNumber(color:String): Number = (
+        max(sets[color] default []) default 1
+    )
+    ---
+    getMaxNumber("red") 
+    * getMaxNumber("green") 
+    * getMaxNumber("blue")
+})
+then sum($)
+```
+</details>
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday2%2Fpart2"><img width="300" src="/images/dwplayground-button.png"><a>
+
+## Day 3
+
+### Part 1
+
+Live stream @ twitch.tv/mulesoft_community: [Playing Advent of Code with DataWeave once more! (Programming challenges)](https://www.twitch.tv/videos/2029366733)
 
 ---
 
