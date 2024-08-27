@@ -2,7 +2,7 @@
 
 DataWeave scripts used in the [adventofcode.com](https://adventofcode.com/) site for 2023.
 
-## Day 1
+## 🔹 Day 1
 
 Live stream @ twitch.tv/mulesoft_community: [It's that time of the year again 🌲 Let's play Advent of Code 2023 with DataWeave ✨](https://www.twitch.tv/videos/1995939015)
 
@@ -72,7 +72,7 @@ then sum($)
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday1%2Fpart2"><img width="300" src="/images/dwplayground-button.png"><a>
 
-## Day 2
+## 🔹 Day 2
 
 ### Part 1
 
@@ -152,7 +152,7 @@ then sum($)
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday2%2Fpart2"><img width="300" src="/images/dwplayground-button.png"><a>
 
-## Day 3
+## 🔹 Day 3
 
 ### Part 1
 
@@ -244,7 +244,7 @@ do {
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday3%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
 
-## Day 4
+## 🔹 Day 4
 
 ### Part 1
 
