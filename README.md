@@ -244,6 +244,55 @@ do {
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday3%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
 
+## Day 4
+
+### Part 1
+
+Live stream @ twitch.tv/mulesoft_community: 
+
+- [Solving Advent of Code puzzles with DataWeave (day 4 part 1)](https://www.twitch.tv/videos/2235381320)
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+import countBy from dw::core::Arrays
+import lines, substringBefore, substringAfter from dw::core::Strings
+output application/json
+fun getNumbers(numbers) = flatten(numbers scan /\d+/)
+---
+lines(payload) map ((line) -> do {
+    var cardName = (line substringBefore ":")
+    var numbers = (line substringAfter ":") splitBy "|"
+    var winningNumbers = getNumbers(numbers[0])
+    var actualNumbers = getNumbers(numbers[1])
+    var matchingNumbers = winningNumbers countBy (actualNumbers contains $)
+    var score = matchingNumbers match {
+        case 1 -> 1
+        case 0 -> 0
+        else -> 2 pow matchingNumbers-1
+    }
+    ---
+    // for debugging purposes
+    // {
+    //     (cardName): {
+    //         winning: winningNumbers,
+    //         actual: actualNumbers,
+    //         matchingNumbers: matchingNumbers,
+    //         score: score
+    //     }
+    // }
+
+    // actual needed code
+    score
+})
+then sum($)
+```
+</details>
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday4%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
+
 ---
 
 ## Other repos
