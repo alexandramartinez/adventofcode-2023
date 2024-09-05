@@ -246,6 +246,9 @@ do {
 
 ## 🔹 Day 4
 
+> [!NOTE]
+> I couldn't solve Part 2, but check out [this amazing script](https://github.com/iglosiggio/aoc2023/blob/main/aoc2023day4ex2.dwl) to solve it.
+
 ### Part 1
 
 Live stream @ twitch.tv/mulesoft_community: 
