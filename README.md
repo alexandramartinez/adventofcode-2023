@@ -296,6 +296,38 @@ then sum($)
 
 <a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday4%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
 
+## 🔹 Day 15
+
+### Part 1
+
+Live stream @ twitch.tv/mulesoft_community: 
+
+- [More Advent of Code puzzles with DataWeave! (day 15 part 1)](https://www.twitch.tv/videos/2249213036)
+
+<details>
+  <summary>Script</summary>
+
+```dataweave
+%dw 2.0
+output application/json
+import charCode from dw::core::Strings
+fun getnum(currentvalue, asciicode) = ((currentvalue + asciicode) * 17) mod 256
+fun getResult(string, r=0) = do {
+    @Lazy
+    var newR = r getnum charCode(string)
+    ---
+    if (!isEmpty(string))
+        string[1 to -1] getResult newR
+    else r
+}
+---
+(payload splitBy ",") map getResult($)
+then sum($)
+```
+</details>
+
+<a href="https://dataweave.mulesoft.com/learn/playground?projectMethod=GHRepo&repo=alexandramartinez%2Fadventofcode-2023&path=scripts%2Fday15%2Fpart1"><img width="300" src="/images/dwplayground-button.png"><a>
+
 ---
 
 ## Other repos
